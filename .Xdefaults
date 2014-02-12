@@ -1,0 +1,30 @@
+urxvt.iconFile: "/home/razzle/.icons/ALLBLACK/scalable/apps/gnome-terminal.svg"
+urxvt*termName:         rxvt
+urxvt*scrollBar:        false
+urxvt*matcher.button:   1
+urxvt.transparent:    true
+urxvt*allow_bold:    true
+urxvt*borderLess: false
+URxvt.internalBorder:10
+terminator.internalBorder:10
+URxvt.externalBorder:0
+!Xft*dpi:                96
+!Xft*antialias:          true
+!Xft*hinting:            full
+!urxvt*depth: 32
+!urxvt*background: rgba:0000/0000/0200/c800
+!urxvt*borderColor: #1A1A1A
+
+URxvt*geometry: 85x24
+URxvt*fading:        0
+URxvt*tintColor:     #ffffff
+URxvt*shading:        0
+URxvt*inheritPixmap:     False
+URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste 
+URxvt.iso14755: False 
+URxvt.font: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
+
+#include "/home/razzle/dotfiles/xcolors/molokai.color"
+
+}}}

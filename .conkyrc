@@ -1,0 +1,116 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+xftfont lime:size=9
+#font -*-clean-*-*-*-*-*-*-*-*-*-*-*-*
+xftalpha 0
+update_interval 1
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+
+#Background alpha
+own_window_argb_visual yes
+own_window_argb_value 0
+
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 600
+maximum_width 215
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+#default_color 656667
+default_color 767778
+default_shade_color 000000
+default_outline_color 828282
+alignment top_right
+gap_x 12
+gap_y 30
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+#Have conky update image
+imlib_cache_size 512
+##############################################
+#  Output
+##############################################
+TEXT
+
+${alignc}S Y S T E M    I N F O
+#${color #F6F6F6}
+${hr}
+Host:$alignr$nodename
+Time:$alignr$time
+Uptime:$alignr$uptime
+RAM:$alignr$mem/$memmax
+Swap usage:$alignr$swap/$swapmax
+Disk usage:$alignr${fs_used /}/${fs_size /}
+CPU usage:$alignr${cpu cpu0}%
+ACPI temp:$alignr${acpitemp} C
+Juice:$alignr${battery BAT1}
+Audio:$alignr${exec amixer -c 0 get Master | grep -m 1 -oE "[[:digit:]]*%"}
+${if_mpd_playing}${color 767778}
+${alignc}M U S I C
+${hr}
+#${color #F6F6F6}
+$mpd_artist$alignr
+#${image ~/.conky/conkyart/image.jpg -p 150,155 -s 50x50}
+${mpd_title 25}
+${mpd_album}
+$mpd_elapsed/$mpd_length (${mpd_status})${color light blue}
+${mpd_bar 4}
+${endif}${color 656667}
+${if_up wlan0}${alignc}W i F i
+${hr}
+Strength:$alignr${wireless_link_qual_perc wlan0}%
+ESSID:$alignr${wireless_essid wlan0}
+
+Downspeed: $alignr ${downspeed wlan0}
+# Gradient ${alignc}${downspeedgraph wlan0 25,200 000000 F6F6F6}
+${alignc}${downspeedgraph wlan0 25,200}
+Upspeed: $alignr ${upspeed wlan0}
+${alignc}${upspeedgraph wlan0 25,200}
+
+Public IP:$alignr${execi 3600 wget -O - wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]|.]//g' | tail}
+Local  IP:$alignr${addr wlan0}
+Total Down: $alignr ${totaldown wlan0}
+Total Up: $alignr ${totalup wlan0}${endif}
+#${execi 1 mpd_file -b | egrep xargs python /home/razzle/dev/py/hello.py }
+#S H O R T C U T    K E Y S
+#${hr}
+#Alt+F2$alignr Run Dialog
+#Alt+F3$alignr Alt Menu
+#Super+Space$alignr Main Menu
+#Super+Tab$alignr Client Menu
+#Super+t$alignr Terminal
+#Super+f$alignr File Manager
+#Super+m$alignr Media Player
+#Super+w$alignr Web Browser
+#Super+h$alignr Task Manager
+#Super+l$alignr Lock Screen
+#Super+v$alignr Volume Control
+#Super+x$alignr Logout
+#PrtSc$alignr Screenshot
+#${alignc}N O T E S
+#${hr}
+#${execi 300 cat ~/.conky/notes}
+${image /usr/share/backgrounds/crunchbang-logo-minimal.png -p 160,520}
