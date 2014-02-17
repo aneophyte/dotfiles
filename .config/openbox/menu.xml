@@ -92,6 +92,11 @@
 					<command>mcomix</command>
 				</action>
 			</item>
+			<item label="Inkscape">
+				<action name="Execute">
+					<command>inkscape</command>
+				</action>
+			</item>
 			<item label="GIMP">
 				<action name="Execute">
 					<command>
@@ -211,11 +216,26 @@
 					</command>
 				</action>
 			</item>
+			<item label="Skype">
+				<action name="Execute">
+					<command>skype</command>
+				</action>
+			</item>
+			<item label="Teamviewer">
+				<action name="Execute">
+					<command>teamviewer</command>
+				</action>
+			</item>
 			<item label="Remote Filesystems">
 				<action name="Execute">
 					<command>
 						gigolo
 					</command>
+				</action>
+			</item>
+			<item label="Pidgin">
+				<action name="Execute">
+					<command>pidgin</command>
 				</action>
 			</item>
 			<menu execute="cb-remote-desktop-pipemenu" id="remotedesktop" label="Remote Desktop"/>
@@ -227,37 +247,37 @@
 			<menu id="libofficesuite" label="LibreOffice Suite">
 				<item label="Writer">
 					<action name="Execute">
-						<command>libreoffice4.1 --writer</command>
+						<command>libreoffice4.2 --writer</command>
 					</action>
 				</item>
 				<item label="Impress">
 					<action name="Execute">
-						<command>libreoffice4.1 --impress</command>
+						<command>libreoffice4.2 --impress</command>
 					</action>
 				</item>
 				<item label="Spreadsheet">
 					<action name="Execute">
-						<command>libreoffice4.1 --calc</command>
+						<command>libreoffice4.2 --calc</command>
 					</action>
 				</item>
 				<item label="Web">
 					<action name="Execute">
-						<command>libreoffice4.1 --web</command>
+						<command>libreoffice4.2 --web</command>
 					</action>
 				</item>
 				<item label="Formula">
 					<action name="Execute">
-						<command>libreoffice4.1 --math</command>
+						<command>libreoffice4.2 --math</command>
 					</action>
 				</item>
 				<item label="Database">
 					<action name="Execute">
-						<command>libreoffice4.1 --database</command>
+						<command>libreoffice4.2 --database</command>
 					</action>
 				</item>
 				<item label="Draw">
 					<action name="Execute">
-						<command>libreoffice4.1 --draw</command>
+						<command>libreoffice4.2 --draw</command>
 					</action>
 				</item>
 			</menu>
@@ -653,6 +673,11 @@
 			<item label="Disk Usage Analyzer">
 				<action name="Execute">
 					<command>baobab</command>
+				</action>
+			</item>
+			<item label="Runlevel Config (rcconf)">
+				<action name="Execute">
+					<command>gksudo &quot;urxvt -e rcconf&quot;</command>
 				</action>
 			</item>
 			<menu execute="cb-printing-pipemenu" id="PrintingPipeMenu" label="Printers"/>

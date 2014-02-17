@@ -15,7 +15,14 @@ URxvt.externalBorder:0
 !urxvt*background: rgba:0000/0000/0200/c800
 !urxvt*borderColor: #1A1A1A
 
-URxvt*geometry: 85x24
+XClock*background: #1A1A1A
+XClock*minuteColor: #EEEEEE
+XClock*hourColor: #EEEEEE
+XClock*majorColor: #EEEEEE
+XClock*minorColor: #EEEEEE
+XClock.input: true
+
+URxvt*geometry: 80x20
 URxvt*fading:        0
 URxvt*tintColor:     #ffffff
 URxvt*shading:        0
@@ -24,6 +31,7 @@ URxvt.perl-ext-common: default,clipboard
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste 
 URxvt.iso14755: False 
 URxvt.font: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
+URxvt.boldFont: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
 
 #include "/home/razzle/dotfiles/xcolors/molokai.color"
 

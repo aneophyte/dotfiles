@@ -85,3 +85,6 @@ unity-mail &
 
 ##bluetooth-applet
 #bluetooth-applet &
+
+#xclock
+#(sleep 8s && xclock -geometry 120x120) &
