@@ -69,11 +69,11 @@
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Italic</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>lime</name>
+      <name>cure</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -82,7 +82,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>lime</name>
+      <name>cure</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -91,7 +91,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>lime</name>
+      <name>nu</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -100,7 +100,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>lime</name>
+      <name>nu</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -118,13 +118,9 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>2</number>
+    <number>1</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-      <name>desktop 1</name>
-      <name>desktop 2</name>
-      -->
       <name>1</name>
       <name>2</name>
       <name>3</name>
@@ -136,7 +132,7 @@
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
-    <popupShow>Nonpixel</popupShow>
+    <popupShow>NonPixel</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
     <!-- 'Center' or 'Top' -->
@@ -155,7 +151,7 @@
        Many programs reserve space automatically, but you can use this in other
        cases. -->
   <margins>
-    <top>15</top>
+    <top>12</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
@@ -178,347 +174,33 @@
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
-  <keyboard>
-    <chainQuitKey>C-g</chainQuitKey>
-    <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
-      <action name="GoToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Right">
-      <action name="GoToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Left">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
-    <!-- Keybindings for windows -->
-    <keybind key="A-F4">
-      <action name="Close"/>
-    </keybind>
-    <keybind key="A-Escape">
-      <action name="Lower"/>
-      <action name="FocusToBottom"/>
-      <action name="Unfocus"/>
-    </keybind>
-    <keybind key="A-space">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="Print">
-      <action name="Execute">
-        <command>xfce4-screenshooter</command>
-      </action>
-    </keybind>
-    <keybind key="A-Print">
-      <action name="Execute">
-        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'</command>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching -->
-    <keybind key="A-Tab">
-      <action name="NextWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="A-S-Tab">
-      <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows">
-        <direction>right</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows">
-        <direction>left</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows">
-        <direction>up</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows">
-        <direction>down</direction>
-      </action>
-    </keybind>
-    <!-- Keybindings for running applications -->
-    <keybind key="A-F2">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Run Program</name>
-        </startupnotify>
-        <command>gmrun</command>
-      </action>
-    </keybind>
-    <keybind key="A-F3">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>dmenu-bind</name>
-        </startupnotify>
-        <command>~/.config/dmenu/dmenu-bind.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-f">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>SpaceFM</name>
-        </startupnotify>
-        <command>spacefm</command>
-      </action>
-    </keybind>
-    <keybind key="W-p">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Show ncmpcpp</name>
-        </startupnotify>
-        <command>urxvt -e ncmpcpp</command>
-      </action>
-    </keybind>
-    <keybind key="S-W-p">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Pause/Play ncmpcpp</name>
-        </startupnotify>
-        <command>ncmpcpp toggle</command>
-      </action>
-    </keybind>
-    <keybind key="S-W-comma">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Previous track ncmpcpp</name>
-        </startupnotify>
-        <command>ncmpcpp prev</command>
-      </action>
-    </keybind>
-    <keybind key="S-W-period">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Next track ncmpcpp</name>
-        </startupnotify>
-        <command>ncmpcpp next</command>
-      </action>
-    </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Terminal</name>
-        </startupnotify>
-        <command>urxvt -bl -e tmux</command>
-      </action>
-    </keybind>
-    <keybind key="W-w">w
+  <keyboard><chainQuitKey>C-g</chainQuitKey><!-- Keybindings for desktop switching --><keybind key="C-A-Left"><action name="GoToDesktop"><to>left</to><wrap>no</wrap></action></keybind><keybind key="C-A-Right"><action name="GoToDesktop"><to>right</to><wrap>no</wrap></action></keybind><keybind key="C-A-Up"><action name="GoToDesktop"><to>up</to><wrap>no</wrap></action></keybind><keybind key="C-A-Down"><action name="GoToDesktop"><to>down</to><wrap>no</wrap></action></keybind><keybind key="S-A-Left"><action name="SendToDesktop"><to>left</to><wrap>no</wrap></action></keybind><keybind key="S-A-Right"><action name="SendToDesktop"><to>right</to><wrap>no</wrap></action></keybind><keybind key="S-A-Up"><action name="SendToDesktop"><to>up</to><wrap>no</wrap></action></keybind><keybind key="S-A-Down"><action name="SendToDesktop"><to>down</to><wrap>no</wrap></action></keybind><keybind key="W-F1"><action name="GoToDesktop"><to>1</to></action></keybind><keybind key="W-F2"><action name="GoToDesktop"><to>2</to></action></keybind><keybind key="W-F3"><action name="GoToDesktop"><to>3</to></action></keybind><keybind key="W-F4"><action name="GoToDesktop"><to>4</to></action></keybind><keybind key="W-d"><action name="ToggleShowDesktop"/></keybind><!-- Keybindings for windows --><keybind key="A-F4"><action name="Close"/></keybind><keybind key="A-Escape"><action name="Lower"/><action name="FocusToBottom"/><action name="Unfocus"/></keybind><keybind key="A-space"><action name="ShowMenu"><menu>client-menu</menu></action></keybind><keybind key="Print"><action name="Execute"><command>xfce4-screenshooter</command></action></keybind><keybind key="A-Print"><action name="Execute"><command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'</command></action></keybind><!-- Keybindings for window switching --><keybind key="A-Tab"><action name="NextWindow"><finalactions><action name="Focus"/><action name="Raise"/><action name="Unshade"/></finalactions></action></keybind><keybind key="A-S-Tab"><action name="PreviousWindow"><finalactions><action name="Focus"/><action name="Raise"/><action name="Unshade"/></finalactions></action></keybind><keybind key="C-A-Tab"><action name="NextWindow"><panels>yes</panels><desktop>yes</desktop><finalactions><action name="Focus"/><action name="Raise"/><action name="Unshade"/></finalactions></action></keybind><!-- Keybindings for window switching with the arrow keys --><keybind key="W-S-Right"><action name="DirectionalCycleWindows"><direction>right</direction></action></keybind><keybind key="W-S-Left"><action name="DirectionalCycleWindows"><direction>left</direction></action></keybind><keybind key="W-S-Up"><action name="DirectionalCycleWindows"><direction>up</direction></action></keybind><keybind key="W-S-Down"><action name="DirectionalCycleWindows"><direction>down</direction></action></keybind><!-- Keybindings for running applications --><keybind key="A-F2"><action name="Execute"><startupnotify><enabled>true</enabled><name>Run Program</name></startupnotify><command>gmrun</command></action></keybind><keybind key="A-F3"><action name="Execute"><startupnotify><enabled>true</enabled><name>dmenu-bind</name></startupnotify><command>~/.config/dmenu/dmenu-bind.sh</command></action></keybind><keybind key="W-f"><action name="Execute"><startupnotify><enabled>true</enabled><name>SpaceFM</name></startupnotify><command>spacefm</command></action></keybind><keybind key="W-p"><action name="Execute"><startupnotify><enabled>true</enabled><name>Show ncmpcpp</name></startupnotify><command>urxvt -e ncmpcpp</command></action></keybind><keybind key="S-W-p"><action name="Execute"><startupnotify><enabled>true</enabled><name>Pause/Play ncmpcpp</name></startupnotify><command>ncmpcpp toggle</command></action></keybind><keybind key="S-W-comma"><action name="Execute"><startupnotify><enabled>true</enabled><name>Previous track ncmpcpp</name></startupnotify><command>ncmpcpp prev</command></action></keybind><keybind key="S-W-period"><action name="Execute"><startupnotify><enabled>true</enabled><name>Next track ncmpcpp</name></startupnotify><command>ncmpcpp next</command></action></keybind><keybind key="W-t"><action name="Execute"><startupnotify><enabled>true</enabled><name>Terminal</name></startupnotify><command>terminator</command></action></keybind><keybind key="W-w">w
       <action name="Execute"><startupnotify><enabled>true</enabled><name>Web Browser</name></startupnotify><command>x-www-browser</command></action>
-    </keybind>
-    <keybind key="W-l">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Lock screen</name>
-        </startupnotify>
-        <command>cb-lock</command>
-      </action>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Editor</name>
-        </startupnotify>
-        <command>geany</command>
-      </action>
-    </keybind>
-    <keybind key="W-m">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Mediaplayer</name>
-        </startupnotify>
-        <command>vlc</command>
-      </action>
-    </keybind>
-    <keybind key="W-h">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>htop</name>
-        </startupnotify>
-        <command>urxvt -e htop</command>
-      </action>
-    </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Volume</name>
-        </startupnotify>
-        <command>xfce4-mixer</command>
-      </action>
-    </keybind>
-    <keybind key="W-c">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>MComix</name>
-        </startupnotify>
-        <command>mcomix</command>
-      </action>
-    </keybind>
-    <keybind key="W-x">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Logout</name>
-        </startupnotify>
-        <command>cb-exit</command>
-      </action>
-    </keybind>
-    <keybind key="W-Tab">
-      <action name="ShowMenu">
-        <menu>client-list-combined-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="W-space">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="A-C-q">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <!-- A bit of tiling -->
-    <keybind key="W-Right">
-      <action name="GrowToEdgeEast"/>
-    </keybind>
-    <keybind key="W-Left">
-      <action name="GrowToEdgeWest"/>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="GrowToEdgeSouth"/>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="GrowToEdgeNorth"/>
-    </keybind>
-    <keybind key="W-A-Left">
-      <action name="Execute">
-        <command>cb-aerosnap --left</command>
-      </action>
-    </keybind>
-    <keybind key="W-A-Right">
-      <action name="Execute">
-        <command>cb-aerosnap --right</command>
-      </action>
-    </keybind>
+    </keybind><keybind key="W-l"><action name="Execute"><startupnotify><enabled>true</enabled><name>Lock screen</name></startupnotify><command>cb-lock</command></action></keybind><keybind key="W-e"><action name="Execute"><startupnotify><enabled>true</enabled><name>Editor</name></startupnotify><command>geany</command></action></keybind><keybind key="W-m"><action name="Execute"><startupnotify><enabled>true</enabled><name>Mediaplayer</name></startupnotify><command>vlc</command></action></keybind><keybind key="W-h"><action name="Execute"><startupnotify><enabled>true</enabled><name>htop</name></startupnotify><command>urxvt -e htop</command></action></keybind><keybind key="W-v"><action name="Execute"><startupnotify><enabled>true</enabled><name>Volume</name></startupnotify><command>xfce4-mixer</command></action></keybind><keybind key="W-c"><action name="Execute"><startupnotify><enabled>true</enabled><name>MComix</name></startupnotify><command>mcomix</command></action></keybind><keybind key="W-x"><action name="Execute"><startupnotify><enabled>true</enabled><name>Logout</name></startupnotify><command>cb-exit</command></action></keybind><keybind key="W-Tab"><action name="ShowMenu"><menu>client-list-combined-menu</menu></action></keybind><keybind key="W-space"><action name="ShowMenu"><menu>root-menu</menu></action></keybind><keybind key="A-C-q"><action name="ShowMenu"><menu>root-menu</menu></action></keybind>
+     A bit of tiling 
+    <keybind key="W-Right"><action name="GrowToEdgeEast"/></keybind>
+    <keybind key="W-Left"><action name="GrowToEdgeWest"/></keybind>
+    <keybind key="W-Down"><action name="GrowToEdgeSouth"/></keybind>
+    <keybind key="W-Up"><action name="GrowToEdgeNorth"/></keybind>
+    <keybind key="W-A-Left"><action name="Execute"><command>cb-aerosnap --left</command></action></keybind>
+    <keybind key="W-A-Right"><action name="Execute"><command>cb-aerosnap --right</command></action></keybind>
+    <!--
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer set -c 0 Master 2+ unmute</command>
+        <command>amixer set -c 1 Master 2+ unmute</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set -c 0 Master 2- unmute</command>
+        <command>amixer set -c 1 Master 2- unmute</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer set -c 0 Master toggle</command>
+        <command>amixer set -c 1 Master toggle</command>
       </action>
     </keybind>
+-->
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
@@ -596,7 +278,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind action="DoubleClick" button="Left">
-        <action name="ToggleMaximize"/>
+        <action xmlns="http://openbox.org/3.4/rc" name="ToggleMaximize"/>
       </mousebind>
       <mousebind action="Press" button="Middle">
         <action name="Lower"/>

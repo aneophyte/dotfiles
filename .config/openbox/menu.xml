@@ -11,9 +11,7 @@
 		<separator/>
 		<item label="Terminal">
 			<action name="Execute">
-				<command>
-                                        urxvt -bl -e tmux
-                                </command>
+				<command>terminator</command>
 			</action>
 		</item>
 		<item label="Web Browser">
@@ -25,14 +23,12 @@
 		</item>
 		<item label="File Manager">
 			<action name="Execute">
-				<command>
-					spacefm
-				</command>
+				<command>pcmanfm</command>
 			</action>
 		</item>
 		<item label="Text Editor">
 			<action name="Execute">
-				<command>geany</command>
+				<command>LightTable</command>
 			</action>
 		</item>
 		<item label="Media Player">
@@ -75,6 +71,11 @@
 					<command>urxvt -bl -e tmux</command>
 				</action>
 			</item>
+			<item label="The Sage Dictionary">
+				<action name="Execute">
+					<command>wine &quot;/media/0C0635E70635D306/.drive_c/Program Files/TheSage/TheSage.exe&quot;</command>
+				</action>
+			</item>
 			<item label="SpaceFM File Manager">
 				<action name="Execute">
 					<command>spacefm</command>
@@ -90,6 +91,11 @@
 			<item label="MComix">
 				<action name="Execute">
 					<command>mcomix</command>
+				</action>
+			</item>
+			<item label="Aseprite">
+				<action name="Execute">
+					<command>aseprite</command>
 				</action>
 			</item>
 			<item label="Inkscape">
@@ -168,6 +174,11 @@
 					</command>
 				</action>
 			</item>
+			<item label="Gtk-RecordMyDesktop">
+				<action name="Execute">
+					<command>gtk-recordmydesktop</command>
+				</action>
+			</item>
 			<item label="Milkytracker">
 				<action name="Execute">
 					<command>milkytracker</command>
@@ -209,6 +220,11 @@
 					</command>
 				</action>
 			</item>
+			<item label="Hipchat">
+				<action name="Execute">
+					<command>hipchat</command>
+				</action>
+			</item>
 			<item label="XChat IRC Client">
 				<action name="Execute">
 					<command>
@@ -233,6 +249,11 @@
 					</command>
 				</action>
 			</item>
+			<item label="Packet Tracer 5">
+				<action name="Execute">
+					<command>wine &quot;/media/0C0635E70635D306/.drive_c/Program Files/Cisco Packet Tracer 5.3/bin/PacketTracer5.exe&quot;</command>
+				</action>
+			</item>
 			<item label="Pidgin">
 				<action name="Execute">
 					<command>pidgin</command>
@@ -247,37 +268,37 @@
 			<menu id="libofficesuite" label="LibreOffice Suite">
 				<item label="Writer">
 					<action name="Execute">
-						<command>libreoffice4.2 --writer</command>
+						<command>libreoffice5.0 --writer</command>
 					</action>
 				</item>
 				<item label="Impress">
 					<action name="Execute">
-						<command>libreoffice4.2 --impress</command>
+						<command>libreoffice5.0 --impress</command>
 					</action>
 				</item>
 				<item label="Spreadsheet">
 					<action name="Execute">
-						<command>libreoffice4.2 --calc</command>
+						<command>libreoffice5.0 --calc</command>
 					</action>
 				</item>
 				<item label="Web">
 					<action name="Execute">
-						<command>libreoffice4.2 --web</command>
+						<command>libreoffice5.0 --web</command>
 					</action>
 				</item>
 				<item label="Formula">
 					<action name="Execute">
-						<command>libreoffice4.2 --math</command>
+						<command>libreoffice5.0 --math</command>
 					</action>
 				</item>
 				<item label="Database">
 					<action name="Execute">
-						<command>libreoffice4.2 --database</command>
+						<command>libreoffice5.0 --database</command>
 					</action>
 				</item>
 				<item label="Draw">
 					<action name="Execute">
-						<command>libreoffice4.2 --draw</command>
+						<command>libreoffice5.0 --draw</command>
 					</action>
 				</item>
 			</menu>
@@ -318,9 +339,14 @@
 			</item>
 		</menu>
 		<menu id="root-menu-681122" label="Development">
-			<item label="Android Dev Tools">
+			<item label="Android Studio">
 				<action name="Execute">
-					<command>eclipse</command>
+					<command>~/devtools/android/studio/bin/studio.sh</command>
+				</action>
+			</item>
+			<item label="IntelliJ IDEA">
+				<action name="Execute">
+					<command>/home/razzle/devtools/ideaIC-14.1.4/idea-IC-141.1532.4/bin/idea.sh</command>
 				</action>
 			</item>
 			<menu id="root-menu-681122-115226" label="AVD">
@@ -340,14 +366,19 @@
 					<command>xchm</command>
 				</action>
 			</item>
-			<item label="Eclipse">
+			<item label="Gaphor">
 				<action name="Execute">
-					<command>~/dev/eclipse/eclipse</command>
+					<command>gaphor</command>
+				</action>
+			</item>
+			<item label="DartEditor">
+				<action name="Execute">
+					<command>dart-editor</command>
 				</action>
 			</item>
 			<item label="QtCreator">
 				<action name="Execute">
-					<command>qtcreator</command>
+					<command>/home/razzle/devtools/Qt5.5.0/Tools/QtCreator/bin/qtcreator -style gtk</command>
 				</action>
 			</item>
 			<item label="MonoDevelop">
@@ -374,7 +405,7 @@
 			</item>
 			<item label="Sworcery">
 				<action name="Execute">
-					<command>&quot;/media/0C0635E70635D306/Games Installed/Superbrothers - Sword and Sworcery/run.sh&quot;</command>
+					<command>&quot;/home/razzle/games/Superbrothers - Sword and Sworcery/run.sh&quot;</command>
 				</action>
 			</item>
 			<item label="Quake III Arena">
@@ -439,6 +470,18 @@
 		<separator/>
 		<menu id="settings" label="Settings">
 			<menu execute="cb-compositor" id="CompositingPipeMenu" label="Compositor"/>
+			<menu id="settings-90631" label="f.lux">
+				<item label="Enable f.lux">
+					<action name="Execute">
+						<command>xflux -l 27.2 -g 85.3333</command>
+					</action>
+				</item>
+				<item label="Disable f.lux">
+					<action name="Execute">
+						<command>killall xflux</command>
+					</action>
+				</item>
+			</menu>
 			<menu id="conkyconfig" label="Conky">
 				<item label="Edit .conkyrc">
 					<action name="Execute">
@@ -607,9 +650,7 @@
 			<menu id="DisplaySettings" label="Display Settings">
 				<item label="ARandR Screen Layout Editor">
 					<action name="Execute">
-						<command>
-						    arandr
-					    </command>
+						<command>arandr --force-version</command>
 					</action>
 				</item>
 				<separator label="Help?"/>
@@ -621,6 +662,11 @@
 					</action>
 				</item>
 			</menu>
+			<item label="IBus settings">
+				<action name="Execute">
+					<command>ibus-setup</command>
+				</action>
+			</item>
 			<menu id="Notifications" label="Notifications">
 				<item label="Settings">
 					<action name="Execute">
@@ -673,6 +719,11 @@
 			<item label="Disk Usage Analyzer">
 				<action name="Execute">
 					<command>baobab</command>
+				</action>
+			</item>
+			<item label="Nethogs">
+				<action name="Execute">
+					<command>gksudo &quot;urxvt -e nethogs wlan0&quot;</command>
 				</action>
 			</item>
 			<item label="Runlevel Config (rcconf)">

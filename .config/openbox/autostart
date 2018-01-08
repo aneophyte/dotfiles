@@ -35,14 +35,12 @@ sleep 2s && \
 tint2 \
 ) &
 
-## Volume control for systray
-(sleep 2s && pnmixer) &
-
-## Volume keys daemon
-xfce4-volumed &
+## Volume control for systray and volume keys daemon
+(sleep 4s && volumeicon) &
 
 ## Enable power management
 xfce4-power-manager &
+tidybattery &
 
 ## Start PCManFM Daemon
 spacefm -d --no-desktop &
@@ -88,3 +86,15 @@ unity-mail &
 
 #xclock
 #(sleep 8s && xclock -geometry 120x120) &
+
+#Start ibus daemon
+ibus-daemon -d -r &
+
+#Launch f.lux (forks automatically)
+xflux -l 27.2 -g 85.3333
+
+#Temporarily disable touchpad when typing
+syndaemon -i 0.4 -d
+
+#Start mpd
+mpd

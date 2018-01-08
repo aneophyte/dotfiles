@@ -16,7 +16,7 @@
 ##############################################
 background yes
 use_xft yes
-xftfont lime:size=9
+xftfont nu:size=8
 #font -*-clean-*-*-*-*-*-*-*-*-*-*-*-*
 xftalpha 1
 update_interval 1
@@ -51,11 +51,11 @@ cpu_avg_samples 2
 override_utf8_locale yes
 #Have conky update image
 imlib_cache_size 512
+mpd_host /home/razzle/.mpd/socket
 ##############################################
 #  Output
 ##############################################
 TEXT
-${image ~/images/logo.png -p 154,520}
 
 
 ${alignc}S Y S T E M    I N F O
@@ -67,23 +67,23 @@ Uptime:$alignr$uptime
 RAM:$alignr$mem/$memmax
 Swap usage:$alignr$swap/$swapmax
 Disk usage:$alignr${fs_used /}/${fs_size /}
-CPU usage:$alignr${cpu cpu0}% ${cpu cpu1}%
+Home usage:$alignr${fs_used /home}/${fs_size /home}
+CPU:$alignr${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${cpu cpu4}%
 ACPI temp:$alignr${acpitemp} C
 Juice:$alignr${battery BAT1}
-Audio:$alignr${exec amixer -c 0 get Master | grep -m 1 -oE "[[:digit:]]*%"}
-${if_mpd_playing}
+Audio:$alignr${exec amixer -c 1 get Master | grep -m 1 -oE "[[:digit:]]*%" }
 
+${if_mpd_playing}
 ${alignc}M U S I C
 ${hr}
 #${color #F6F6F6}
-${font WenQuanYi Bitmap Song:size=6}$mpd_artist${font}$alignr
-#${image ~/.conky/conkyart/image.jpg -p 150,155 -s 50x50}
-${font WenQuanYi Bitmap Song:size=6}${mpd_title 25}${font}
-${font WenQuanYi Bitmap Song:size=6}${mpd_album}${font}
-$mpd_elapsed/$mpd_length (${mpd_status})${color light blue}
+${offset 64}${font VL Gothic:size=7}${scroll 30 $mpd_artist}${font}
+${offset 64}${font VL Gothic:size=7}${scroll 30 $mpd_title}${font}
+${offset 64}${font VL Gothic:size=7}${scroll 30 $mpd_album}${font}${color}
+${offset 64}$mpd_elapsed/$mpd_length [${mpd_status}${if_match $mpd_bitrate != 0}|${mpd_bitrate}${endif}]${color light blue}
 ${mpd_bar 4}${color}
 ${endif}
-${if_up wlan0}
+${if_existing /sys/class/net/wlan0/operstate up}
 ${alignc}W i F i
 ${hr}
 Strength:$alignr${wireless_link_qual_perc wlan0}%
@@ -99,6 +99,21 @@ Public IP:$alignr${execi 3600 wget -O - wget -q -O - checkip.dyndns.org | sed -e
 Local  IP:$alignr${addr wlan0}
 Total Down: $alignr ${totaldown wlan0}
 Total Up: $alignr ${totalup wlan0}${endif}
+${if_existing /sys/class/net/eth0/operstate up}
+${alignc}L A N
+${hr}
+
+Downspeed: $alignr ${downspeed eth0}
+# Gradient ${alignc}${downspeedgraph eth0 25,200 000000 F6F6F6}
+${alignc}${downspeedgraph eth0 25,200}
+Upspeed: $alignr ${upspeed eth0}
+${alignc}${upspeedgraph eth0 25,200}
+
+Public IP:$alignr${execi 3600 wget -O - wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]|.]//g' | tail}
+Local  IP:$alignr${addr eth0}
+Total Down: $alignr ${totaldown eth0}
+Total Up: $alignr ${totalup eth0}${endif}
+
 #${execi 1 mpd_file -b | egrep xargs python /home/razzle/dev/py/hello.py }
 #S H O R T C U T    K E Y S
 #${hr}

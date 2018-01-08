@@ -1,13 +1,17 @@
-urxvt.iconFile: "/home/razzle/.icons/ALLBLACK/scalable/apps/gnome-terminal.svg"
-urxvt*termName:         rxvt
+urxvt.iconFile: /usr/share/icons/Faenza-Bunsen-common/apps/48/utilities-terminal.png
+urxvt*termName:         rxvt-256color
 urxvt*scrollBar:        false
 urxvt*matcher.button:   1
-urxvt.transparent:    true
+urxvt.transparent:    false
 urxvt*allow_bold:    true
 urxvt*borderLess: false
 URxvt.internalBorder:10
 terminator.internalBorder:10
 URxvt.externalBorder:0
+
+Xft.hinting: none
+Xft.rgba: rgb
+
 !Xft*dpi:                96
 !Xft*antialias:          true
 !Xft*hinting:            full
@@ -28,11 +32,23 @@ URxvt*tintColor:     #ffffff
 URxvt*shading:        0
 URxvt*inheritPixmap:     False
 URxvt.perl-ext-common: default,clipboard
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste 
-URxvt.iso14755: False 
-URxvt.font: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
-URxvt.boldFont: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.font: -*-profont-medium-*-*-*-12-*-*-*-*-*-*-*
+!URxvt.font: xft:Fixedsys Excelsior:pixelsize=13:style=Regular
+URxvt.boldFont: -*-orp-bold-*-*-*-12-*-*-*-*-*-*-*
+!URxvt.boldFont: xft:Fixedsys Excelsior:pixelsize=13:style=Bold
+!URxvt.letterSpace: -1
+!URxvt.lineSpace: -1
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
 
 #include "/home/razzle/dotfiles/xcolors/molokai.color"
 
-}}}

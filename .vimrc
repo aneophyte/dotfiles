@@ -6,12 +6,12 @@ call vundle#rc()
   " let Vundle manage Vundle
   "  " required! 
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 
 
 set nu
-execute pathogen#infect()
+"execute pathogen#infect()
 syntax on
 colorscheme molokai
 setlocal tabstop=4
