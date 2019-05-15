@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/razzle/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -91,38 +91,47 @@ git_prompt_status() {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 unset LIBGL_DRIVERS_PATH
-export DART_SDK=/home/razzle/darteditor-linux-ia32/dart/dart-sdk/
+export DART_SDK=~/darteditor-linux-ia32/dart/dart-sdk/
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_151
-export ANDROID_HOME=/home/razzle/devtools/android/sdk
-export GRADLE_HOME=/home/razzle/devtools/android/studio/gradle/gradle-3.4.1
-export SCALA_HOME=/home/razzle/devtools/scala/scala-2.11.7
-export GOROOT=/home/razzle/devtools/go/go1.5.1.linux-amd64/go
-export KOTLIN_HOME=/home/razzle/devtools/kotlin
-export MAVEN_HOME=/home/razzle/devtools/maven/apache-maven-3.3.9
-export PURESCRIPT=/home/razzle/devtools/purescript
-export KOBALT=/home/razzle/devtools/kobalt
-export SPARK_HOME=/home/razzle/devtools/spark/spark-2.0.2-bin-hadoop2.6
+export ANDROID_HOME=~/devtools/android/sdk
+export GRADLE_HOME=~/devtools/android/studio/gradle/gradle-3.4.1
+export SCALA_HOME=~/devtools/scala/scala-2.11.7
+export GOROOT=~/devtools/go/go1.5.1.linux-amd64/go
+export KOTLIN_HOME=~/devtools/kotlin
+export MAVEN_HOME=~/devtools/maven/apache-maven-3.3.9
+export PURESCRIPT=~/devtools/purescript
+export KOBALT=~/devtools/kobalt
+export SPARK_HOME=~/devtools/spark/spark-2.0.2-bin-hadoop2.6
+export FLUTTER=~/devtools/flutter
+export GHC=`stack path --compiler-bin`
 
-export PATH=$PATH:/home/razzle/.config/panel_scripts:$ANDROID_HOME/platform-tools/:$ANDROID_HOME/tools/:$ANDROID_HOME/build-tools/25.0.2/:$DART_SDK/bin/:/home/razzle/devtools/scala/scala-2.11.4/bin/:$JAVA_HOME/bin:$GRADLE_HOME/bin:$TOOLCHAIN/bin:$SCALA_HOME/bin:$GOROOT/bin:$KOTLIN_HOME/bin:$MAVEN_HOME/bin:/home/razzle/devtools/swift/usr/bin:$PURESCRIPT:$KOBALT/bin:/home/razzle/devtools/maven/bin:$SPARK_HOME/bin:`yarn global bin path`
+export PATH=$PATH:~/.config/panel_scripts:$ANDROID_HOME/platform-tools/:$ANDROID_HOME/tools/:$ANDROID_HOME/build-tools/25.0.2/:$DART_SDK/bin/:~/devtools/scala/scala-2.11.4/bin/:$JAVA_HOME/bin:$GRADLE_HOME/bin:$TOOLCHAIN/bin:$SCALA_HOME/bin:$GOROOT/bin:$KOTLIN_HOME/bin:$MAVEN_HOME/bin:~/devtools/swift/usr/bin:$PURESCRIPT:$KOBALT/bin:~/devtools/maven/bin:$SPARK_HOME/bin:`yarn global bin path`:~/.local/bin:~/bin/:$FLUTTER/bin:$GHC
+# added by Anaconda3 4.4.0 installer
+
+
 export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH:$ANDROID_HOME/tools/lib/
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export LIBGL_DEBUG=verbose
 
-export ANDROID_NDK=/home/razzle/devtools/android/sdk/ndk-bundle
+export ANDROID_NDK=~/devtools/android/sdk/ndk-bundle
 export TOOLCHAIN=/tmp/ffmpeg
 export SYSROOT=$TOOLCHAIN/sysroot/
 eval $(thefuck --alias)
 export ANDROID_HVPROTO=ddm
-export MPD_HOST=/home/razzle/.mpd/socket
+export MPD_HOST=~/.mpd/socket
+export PATH="~/devtools/anaconda3/bin:$PATH"
+export PATH=$PATH:~/devtools/eta
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/razzle/.sdkman"
-[[ -s "/home/razzle/.sdkman/bin/sdkman-init.sh" ]] && source "/home/razzle/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 
 # OPAM configuration
-. /home/razzle/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias shake="adb shell input text \"RR\""
+
+source /opt/tinyOS/tinyOS.env
